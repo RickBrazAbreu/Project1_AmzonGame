@@ -1103,19 +1103,19 @@ function WinnerButton(){
 
 
 function forestSOund(){
-    var audio = new Audio('./audio/forestsound.wav')
-    
+    var audio = new Audio('audio/forestsound.wav')
+
     audio.play( )
 }
 
 function gamestartSound(){
-    var audiogamestart = new Audio('./audio/gamestart.mp3')
+    var audiogamestart = new Audio('audio/gamestart.mp3')
     audiogamestart.play( )
    
 }
 
 function monkeyDieSound(){
-    var monkeydiesound = new Audio('./audio/monkeydie.mp3')
+    var monkeydiesound = new Audio('audio/monkeydie.mp3')
     monkeydiesound.volume = 0.3
     monkeydiesound.play( )
 }
