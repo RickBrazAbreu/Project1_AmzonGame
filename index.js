@@ -176,7 +176,7 @@ class Player{
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y
         
-        //checking the gravity conditions
+        //checking the gravity conditions                 antes de bater no fim do canvas
         if(this.position.y + this.height + this.velocity.y <= canvas.height){ //aki ta vendo se e menor pq no canas o num aumenta indo pra baixo, 
              this.velocity.y += gravity //acelerando overtime conforme vai rolando o game vai acelerando
         }else{
@@ -233,7 +233,7 @@ class River {
             y //now you give this value for each platform inside the array it is automatic
         }
 
-        this.width = 400
+        this.width = 4500
         this.height = 50
         
 
@@ -722,6 +722,7 @@ function isOnTopOfPlatform({object, platform}){
 
 
 function CollisionTop({object1, object2}){
+  //          alltura           unti lthe end of the body higher                                              if is moving.... is bigger than the eneie movement..se o inimigo ta parado
     return  (object1.position.y + object1.height <= object2.position.y && object1.position.y + object1.height + object1.velocity.y >= object2.position.y && object1.position.x + object1.width >= object2.position.x && object1.position.x <= object2.position.x + object2.width )
 
 }
@@ -789,7 +790,7 @@ function animate(){
            //aki deleta o inimigo
            //            (inimigo, quantidade a ser destruido  = 1)
            goombas.splice(index , 1)
-           console.log('relouda')
+           //console.log('relouda')
        } else if (
            //position.x e o lado direito do player
            //player.width e o tamanho inteiro do player  .... se o canot esq ate o final do corpo do player encostar no canto esq do inimio..=== collision ..aki somente lado esq do goomba
