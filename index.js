@@ -7,12 +7,17 @@ let life = document.querySelector('#life');
 let score = document.querySelector('#score');
 
 
+
 let initialScreen = document.querySelector('.ScreenFront');
 let loserScreen = document.querySelector('.ScreenLoser');
+let firstgameScreen = document.querySelector('.cover-canvas-bf-game')
 let winnerScreen = document.querySelector('.ScreenWinner');
 let playbtn = document.querySelector('.play');
 let  restartbtn = document.querySelector('.restart');
 let menubtn = document.querySelector ('.menu');
+
+
+
 
 let imgPLatforms = new Image()
 let imgPLayer = new Image()
@@ -176,7 +181,7 @@ class Player{
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y
         
-        //checking the gravity conditions
+        //checking the gravity conditions                 antes de bater no fim do canvas
         if(this.position.y + this.height + this.velocity.y <= canvas.height){ //aki ta vendo se e menor pq no canas o num aumenta indo pra baixo, 
              this.velocity.y += gravity //acelerando overtime conforme vai rolando o game vai acelerando
         }else{
@@ -233,7 +238,7 @@ class River {
             y //now you give this value for each platform inside the array it is automatic
         }
 
-        this.width = 400
+        this.width = 4500
         this.height = 50
         
 
@@ -722,6 +727,7 @@ function isOnTopOfPlatform({object, platform}){
 
 
 function CollisionTop({object1, object2}){
+  //          alltura           unti lthe end of the body higher                                              if is moving.... is bigger than the eneie movement..se o inimigo ta parado
     return  (object1.position.y + object1.height <= object2.position.y && object1.position.y + object1.height + object1.velocity.y >= object2.position.y && object1.position.x + object1.width >= object2.position.x && object1.position.x <= object2.position.x + object2.width )
 
 }
@@ -789,7 +795,7 @@ function animate(){
            //aki deleta o inimigo
            //            (inimigo, quantidade a ser destruido  = 1)
            goombas.splice(index , 1)
-           console.log('relouda')
+           //console.log('relouda')
        } else if (
            //position.x e o lado direito do player
            //player.width e o tamanho inteiro do player  .... se o canot esq ate o final do corpo do player encostar no canto esq do inimio..=== collision ..aki somente lado esq do goomba
@@ -944,8 +950,10 @@ function animate(){
 
     
     console.log(checkDistancetoWin)
-    if(checkDistancetoWin >= 3970){
+    if(checkDistancetoWin >= 500){
         winnerScreen.style.display = 'flex'
+        firstgameScreen.style.display = 'none'
+        loserScreen.style.display = 'none'
         //console.log('YOU WIN')
     }
 
@@ -1045,6 +1053,7 @@ function ResetWholeGame(){
     if(lifePoints <= 0){
         console.log(lifePoints)
         loserScreen.style.display = 'flex'
+        firstgameScreen.style.display = 'none'
         init()
 
 
@@ -1055,6 +1064,7 @@ function ResetWholeGame(){
         score.innerHTML = scorePoints
        //location.reload();
     }else if(lifePoints > 0){
+        firstgameScreen.style.display = 'flex'
         loserScreen.style.display = 'none'
     }
    
@@ -1070,6 +1080,7 @@ function PLAYGAME (){
 }
 function RESTATGAME() {
     gamestartSound()
+    firstgameScreen.style.display = 'flex'
     initialScreen.style.display = 'none'
     loserScreen.style.display = 'none'
     //location.reload()
@@ -1093,7 +1104,7 @@ function MENUBTN() {
 function WinnerButton(){
     gamestartSound()
     location.reload()
-   // winnerScreen.style.display = 'none'
+    winnerScreen.style.display = 'none'
 }
 
 
@@ -1102,18 +1113,19 @@ function WinnerButton(){
 
 
 function forestSOund(){
-    var audio = new Audio('./audio/forestsound.wav')
+    var audio = new Audio('audio/forestsound.wav')
+
     audio.play( )
 }
 
 function gamestartSound(){
-    var audiogamestart = new Audio('./audio/gamestart.mp3')
+    var audiogamestart = new Audio('audio/gamestart.mp3')
     audiogamestart.play( )
    
 }
 
 function monkeyDieSound(){
-    var monkeydiesound = new Audio('./audio/monkeydie.mp3')
+    var monkeydiesound = new Audio('audio/monkeydie.mp3')
     monkeydiesound.volume = 0.3
     monkeydiesound.play( )
 }
