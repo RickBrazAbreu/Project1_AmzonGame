@@ -7,12 +7,16 @@ let life = document.querySelector('#life');
 let score = document.querySelector('#score');
 
 
+
 let initialScreen = document.querySelector('.ScreenFront');
 let loserScreen = document.querySelector('.ScreenLoser');
 let winnerScreen = document.querySelector('.ScreenWinner');
 let playbtn = document.querySelector('.play');
 let  restartbtn = document.querySelector('.restart');
 let menubtn = document.querySelector ('.menu');
+
+
+
 
 let imgPLatforms = new Image()
 let imgPLayer = new Image()
