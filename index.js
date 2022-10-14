@@ -950,7 +950,7 @@ function animate(){
 
     
     console.log(checkDistancetoWin)
-    if(checkDistancetoWin >= 500){
+    if(checkDistancetoWin >= 3500){
         winnerScreen.style.display = 'flex'
         firstgameScreen.style.display = 'none'
         loserScreen.style.display = 'none'
