@@ -11,68 +11,78 @@
 
 <body>
   <!-- HERE SCREEN TO PLAY -->
-  <div class="holdscreen">
+  
+    <div class="holdscreen">
     
     
-    <div class="screens">
-      <div class="lifetext"> LIFE
-        <div id="life" class="life">3</div>
-      </div>
-      <div class="scoretext"> SCORE
-        <div id="score" class="life">0</div>
-       </div>
-
-
-    <button class="playbtn play" onclick="PLAYGAME()">PLAY</button>
-    
-    <button class="playbtn menu" onclick="MENUBTN()"> MENU</button>
+      <div class="screens">
+        <div class="lifetext"> LIFE
+          <div id="life" class="life">3</div>
+        </div>
+        <div class="scoretext"> SCORE
+          <div id="score" class="life">0</div>
+         </div>
+  
+  
+      <button class="playbtn play" onclick="PLAYGAME()">PLAY</button>
       
-      <!-- <div  class="life">8</div> -->
-    </div>
-    <canvas >  </canvas>
-    
-    
+      <button class="playbtn menu" onclick="MENUBTN()"> MENU</button>
+        
+        <!-- <div  class="life">8</div> -->
+      </div>
 
-  </div>
+      <div class="cover-canvas-bf-game">
+        
+        <canvas >  </canvas>
+
+
+          <div class="ScreenFront" style="display: flex ;">
+            <div class="container">
+              <div class="imgexplain">
+              <h1 class="text">Hello <br> Welcome to AMAZON GAME!!!</h1>
+              <h3 class="text">Hit the "PLAY" button to help Tiao going back home</h3>
+              <h3 class="text">Use the keyboard to move, and avoid the enemies</h3>
+              <img class="imgexplain" src="./img/imgExplainGame.png">
+              <h3 class="text">P.S .. kill the enemies jumping on the top. </h3>
+              <h3 class="text">Get more Score </h3>
+            </div>
+          </div>
+
+      </div>
+      
+        
+      </div>
+      
+      <div class="ScreenLoser" style="display: none ;">
+        <div class="containerLoser">
+          <div class="imgexplain">
+           <h1 class="text"> Sorry, <br>you need to train more <br> to be able to survive in the AMAZON FOREST !!!</h1>
+           <h2 class="text">Hit the Button Restart to Play Again...</h2>
+           <button class="playbtn restart" onclick="RESTATGAME()"> RESTART</button>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="ScreenWinner" style="display: none ;">
+        <div class="containerWinner">
+          <div class="imgexplain">
+           <h1 class="text" > Thank you very much you  for saving Tiao's Life!!!</h1>
+           <button class="keepgoing" onclick="WinnerButton()">Go Back Menu</button>
+    
+    
+          </div>
+        </div>
+        
+      </div>
+      
+  
+    </div>
+    
+  
   
 
-
-  <div class="ScreenFront" style="display: flex ;">
-    <div class="container">
-      <div class="imgexplain">
-        <h1 class="text">Hello <br> Welcome to AMAZON GAME!!!</h1>
-        <h3 class="text">Hit the "PLAY" button to help Tiao going back home</h3>
-        <h3 class="text">Use the keyboard to move, and avoid the enemies</h3>
-        <img class="imgexplain" src="./img/imgExplainGame.png">
-        <h3 class="text">P.S .. kill the enemies jumping on the top. </h3>
-        <h3 class="text">Get more Score </h3>
-      </div>
-    </div>
-    
-  </div>
-
-  <div class="ScreenLoser" style="display: flex ;">
-    <div class="containerLoser">
-      <div class="imgexplain">
-       <h1 class="text"> Sorry, <br>you need to train more <br> to be able to survive in the AMAZON FOREST !!!</h1>
-       <h2 class="text">Hit the Button Restart to Play Again...</h2>
-       <button class="playbtn restart" onclick="RESTATGAME()"> RESTART</button>
-      </div>
-    </div>
-    
-  </div>
-
-  <div class="ScreenWinner" style="display: none ;">
-    <div class="containerWinner">
-      <div class="imgexplain">
-       <h1 class="text" > Thank you very much you  for saving Tiao's Life!!!</h1>
-       <button class="keepgoing" onclick="WinnerButton()">Go Back Menu</button>
-
-
-      </div>
-    </div>
-    
-  </div>
+  
 
 
 

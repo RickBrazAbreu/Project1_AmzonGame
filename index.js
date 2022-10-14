@@ -10,6 +10,7 @@ let score = document.querySelector('#score');
 
 let initialScreen = document.querySelector('.ScreenFront');
 let loserScreen = document.querySelector('.ScreenLoser');
+let firstgameScreen = document.querySelector('.cover-canvas-bf-game')
 let winnerScreen = document.querySelector('.ScreenWinner');
 let playbtn = document.querySelector('.play');
 let  restartbtn = document.querySelector('.restart');
@@ -949,8 +950,10 @@ function animate(){
 
     
     console.log(checkDistancetoWin)
-    if(checkDistancetoWin >= 3970){
+    if(checkDistancetoWin >= 500){
         winnerScreen.style.display = 'flex'
+        firstgameScreen.style.display = 'none'
+        loserScreen.style.display = 'none'
         //console.log('YOU WIN')
     }
 
@@ -1050,6 +1053,7 @@ function ResetWholeGame(){
     if(lifePoints <= 0){
         console.log(lifePoints)
         loserScreen.style.display = 'flex'
+        firstgameScreen.style.display = 'none'
         init()
 
 
@@ -1060,6 +1064,7 @@ function ResetWholeGame(){
         score.innerHTML = scorePoints
        //location.reload();
     }else if(lifePoints > 0){
+        firstgameScreen.style.display = 'flex'
         loserScreen.style.display = 'none'
     }
    
@@ -1075,6 +1080,7 @@ function PLAYGAME (){
 }
 function RESTATGAME() {
     gamestartSound()
+    firstgameScreen.style.display = 'flex'
     initialScreen.style.display = 'none'
     loserScreen.style.display = 'none'
     //location.reload()
@@ -1098,7 +1104,7 @@ function MENUBTN() {
 function WinnerButton(){
     gamestartSound()
     location.reload()
-   // winnerScreen.style.display = 'none'
+    winnerScreen.style.display = 'none'
 }
 
 

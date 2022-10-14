@@ -1,17 +1,20 @@
 body{
     margin: 0;
     background-color: rgb(140, 206, 136);
-    display: flex;
+    /* display: flex; */
     align-items: center; /*made thins be in hte middle*/
     justify-content: center;  /* here made the canvas or other obj insde thebody be in the middle*/
     height: 100vh;
     width:  100vw;
+    position:relative;
   }
+
+  
   .holdscreen{
     width: 100%;
     height: 100%;
     background-color: rgb(217, 238, 238);
-    display:flexbox;
+    /* display: flex; */
     align-items: center; /*made thins be in hte middle*/
     justify-content: center; 
 
@@ -19,15 +22,7 @@ body{
  
 
  
-  canvas{
-    position: relative;
-    /* background-image: './img/arvores.png'; */
-    background-color: aqua;
-    margin-top: 115px;
-    margin-left: 30%;
-    width: 800px;
-    height: 576;
-  }
+  
   .holdscreen .screens{
     height: 55px;
     background-color: rgb(49, 44, 114);
@@ -58,21 +53,39 @@ body{
     border-radius:20px;
     background-color: aliceblue;
   }
+  .cover-canvas-bf-game{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
 
-  .ScreenFront{
+  .cover-canvas-bf-game canvas{
+    position: relative;
+    /* background-image: './img/arvores.png'; */
+    background-color: aqua;
+    margin-top: 5%;
+    
+    width: 800px;
+    height: 576;
+  }
+
+  .cover-canvas-bf-game .ScreenFront{
       /* display: flex; */
       justify-content: center;
       align-items: center;
       
-      margin-left: 5%;
-      width: 1550px;
-      height: 900px;
-      background-color: #d9eeed;
-      position:absolute
+      
+      width: 100%;
+      height: auto;
+      background-color: blue;
+    
+      position:absolute;
+      top: 0;
+      
   }
 
   .ScreenFront .container{
-      display: flexbox;
+      display: flex;
       border-radius: 40px;
       width: 650px;
       height: 800px;
@@ -95,9 +108,10 @@ body{
       /* display: flex; */
       justify-content: center;
       align-items: center;
-      margin-left: 5%;
-      width: 1550px;
-      height: 900px;
+      
+      width: 100%;
+      height: auto;
+      margin-top: 0%;
       background-color: #d9eeed;
       position:absolute
   }
@@ -105,6 +119,7 @@ body{
   .ScreenLoser .containerLoser{
     display: flexbox;
     border-radius: 40px;
+    margin-top: 5%;
     width: 650px;
     height: 800px;
     background-color: rgb(49, 44, 114);
@@ -121,12 +136,12 @@ body{
   }
 
   .ScreenWinner{
-      display: none;
+      /* display: none; */
       justify-content: center;
       align-items: center;
-      margin-left: 5%;
-      width: 1550px;
-      height: 900px;
+      /* margin-left: 5%; */
+      width: 100%;
+      height: auto;
       background-color: #d9eeed;
       position:absolute
   }
